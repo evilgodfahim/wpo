@@ -5,10 +5,10 @@ import email.utils
 from datetime import datetime, timezone
 
 RSS_URLS = [
-    "https://www.project-syndicate.org/rss"
+    "https://feeds.washingtonpost.com/rss/opinions"
 ]
 
-ARCHIVE_PREFIX = "https://archive.is/o/xWwb1/"
+ARCHIVE_PREFIX = "https://archive.is/o/9JpVp/"
 OUTPUT_FILE = "combined.xml"
 
 def parse_entry_datetime(entry):
@@ -30,7 +30,7 @@ doc.appendChild(rss)
 channel = doc.createElement("channel")
 rss.appendChild(channel)
 channel.appendChild(doc.createElement("title")).appendChild(doc.createTextNode("Project Syndicate Archive Feed"))
-channel.appendChild(doc.createElement("link")).appendChild(doc.createTextNode("https://www.project-syndicate.org/"))
+channel.appendChild(doc.createElement("link")).appendChild(doc.createTextNode("https://washingtonpost.com"))
 channel.appendChild(doc.createElement("description")).appendChild(doc.createTextNode("Combined feed with archive links"))
 
 all_entries = []
